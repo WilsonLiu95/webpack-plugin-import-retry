@@ -9,18 +9,36 @@ webpack plugin to modify webpack_require module to retry import async chunk agai
 With npm
 
 ```shell
-npm install webpack-plugin-hash-output --save-dev
+npm install webpack-plugin-import-retry --save-dev
 ```
 
 With yarn
 
 ```shell
-yarn add webpack-plugin-hash-output --dev
+yarn add webpack-plugin-import-retry --dev
 ```
 
 ## 截图 screenshot
 
 ![retry JS](./docs/reloadImg.png)
+
+## Usage
+
+Just add this plugin as usual.
+
+```javascript
+// webpack.config.js
+const importRetry = require("webpack-plugin-import-retry");
+
+module.exports = {
+  // ...
+  output: {
+    //...
+    filename: "[name].[chunkhash].js"
+  },
+  plugins: [new importRetry(options)]
+};
+```
 
 ## why?
 
@@ -78,5 +96,6 @@ function(htmlNode, chunkId, __webpack_require__, options){
 ```
 
 ## 对于其他资源，可以配合 assets-reload?
+
 另外一个资源加载重试的组件 [assets-reload](https://www.npmjs.com/package/assets-reload)
- 本模块通过 script, link, img等标签上的 onerror回调来进行资源加载重试，并且规则可定制。
+本模块通过 script, link, img 等标签上的 onerror 回调来进行资源加载重试，并且规则可定制。

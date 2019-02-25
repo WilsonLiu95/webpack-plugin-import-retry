@@ -1,6 +1,6 @@
 {
   "name": "webpack-plugin-import-retry",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "webpack plugin to modify webpack_require module to retry import async chunk again",
   "main": "src/index.js",
   "scripts": {
