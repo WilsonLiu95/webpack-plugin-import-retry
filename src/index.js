@@ -24,9 +24,9 @@ class AssetReload {
             var replaceUrl = modifyReloadQry(htmlNode[linkKey], reloadTimes-1);
             ${
               cdnDomain
-                ? "if(reloadTimes == 2){replaceUrl = replaceUrl.replace(" +
+                ? "if(reloadTimes == 2){replaceUrl = replaceUrl.replace('" +
                   cdnDomain +
-                  ", location.hostname)}"
+                  "', location.hostname)}"
                 : ""
             }
             
